@@ -59,7 +59,7 @@ Now when we click the button, we will end up with the response of our api in our
 
 Being able to console.log data is cool, and a great place to start, but we need to get that data into our DOM!
 
-- Create an insertData function that takes the data, parses our it's valuable information, and writes it to the DOM
+- Create an insertData function that takes the data, parses it's valuable information, and writes it to the DOM
 
 ``` javascript
   var insertData = function (arr) {
@@ -126,7 +126,7 @@ GET requests are the easiest of requests. POSTs are a bit more tricky, but not b
 - The next thing we want to do is capture the value of our input forms using .val()
 
 ``` javascript
-  $('body').on('click', '.js-add-user', function () {
+  $('body').on('submit', '.js-add-user', function () {
     var userName = $('.js-name').val();
     var userJob = $('.js-job').val();
   });
@@ -137,7 +137,7 @@ GET requests are the easiest of requests. POSTs are a bit more tricky, but not b
 - Have the function return our ajax POST request
 
 ``` javascript
-  $('body').on('click', '.js-add-user', function () {
+  $('body').on('submit', '.js-add-user', function () {
     var userName = $('.js-name').val();
     var userJob = $('.js-job').val();
     return $.ajax({
@@ -155,7 +155,7 @@ Our data is currently the values from our input fields.
 - Let's add success and error handlers to our request.
 
 ``` javascript
-  $('body').on('click', '.js-add-user', function () {
+  $('body').on('submit', '.js-add-user', function () {
     var userName = $('.js-name').val();
     var userJob = $('.js-job').val();
 
@@ -175,7 +175,7 @@ Our data is currently the values from our input fields.
 - Inside our error function, we'll alert the user that something went wrong.
 
 ``` javascript
-  $('body').on('click', '.js-add-user', function (e) {
+  $('body').on('submit', '.js-add-user', function (e) {
     e.preventDefault();
     var userName = $('.js-name').val();
     var userJob = $('.js-job').val();
